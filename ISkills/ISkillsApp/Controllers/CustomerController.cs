@@ -26,7 +26,7 @@ namespace ISkillsApp.Controllers
 			}
 			catch (Exception ex)
 			{
-				return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+				return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
 			}
 		}
 		[HttpDelete]    // api/DeleteCustomer/id
@@ -45,13 +45,13 @@ namespace ISkillsApp.Controllers
 					}
 					else
 					{
-						return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Entity with Id=" + id + "not found");
+						return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Entity with Id=" + id + "not found");
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+				return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
 			}
 		}
 
@@ -82,13 +82,13 @@ namespace ISkillsApp.Controllers
 					}
 					else
 					{
-						return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "entity with id = " + id + "not found");
+						return Request.CreateErrorResponse(HttpStatusCode.NotFound, "entity with id = " + id + "not found");
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+				return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
 			}
 		}
 
