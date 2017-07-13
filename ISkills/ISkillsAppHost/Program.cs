@@ -14,7 +14,7 @@ namespace ISkillsAppHost
 	{
 		static void Main(string[] args)
 		{
-			string baseAddress = "http://localhost:9000/";
+			string baseAddress = "http://localhost:9001/";
 			StartOptions options = new StartOptions(baseAddress);
 
 			// Start OWIN host 
