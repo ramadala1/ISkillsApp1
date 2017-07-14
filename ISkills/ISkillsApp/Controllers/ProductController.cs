@@ -96,5 +96,25 @@ namespace ISkillsApp.Controllers
 				return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
 			}
 		}
+		//[HttpGet]
+		public HttpResponseMessage GetProductsByCategoryID(int id)
+		{
+			try
+			{
+				var products = entities.Products.Select(x => x.CategoryID == id);
+				if (products.Count() > 0)
+				{
+					return Request.CreateResponse(HttpStatusCode.OK, products);
+				}
+				else
+				{
+					return Request.CreateErrorResponse(HttpStatusCode.NotFound, "there are no products belongs to this category");
+				}
+			}
+			catch (Exception ex)
+			{
+				return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+			}
+		}
 	}
 }
