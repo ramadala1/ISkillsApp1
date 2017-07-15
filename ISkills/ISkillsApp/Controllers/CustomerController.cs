@@ -21,7 +21,8 @@ namespace ISkillsApp.Controllers
 				{
 					entities.Customers.Add(customer);
 					entities.SaveChanges();
-					return Request.CreateResponse(HttpStatusCode.OK);
+					var message = Request.CreateResponse(HttpStatusCode.Created);
+					return message;
 				}
 			}
 			catch (Exception ex)
@@ -91,6 +92,5 @@ namespace ISkillsApp.Controllers
 				return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
 			}
 		}
-
 	}
 }
