@@ -15,6 +15,8 @@ namespace ISkillsApp
 		// parameter in the WebApp.Start method.
 		public void Configuration(IAppBuilder appBuilder)
 		{
+
+
 			// Configure Web API for self-host. 
 			HttpConfiguration config = new HttpConfiguration();
 			config.Routes.MapHttpRoute(
